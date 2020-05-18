@@ -15,9 +15,13 @@ EXPOSE 80
 #RUN cd / && \
 #  git clone https://github.com/Tysseract/PYX-Reloaded.git
   
-COPY * /PYX-Reloaded/
-  
-RUN cd /PYX-Reloaded && \
-  mvn clean package
-  
-ENTRYPOINT ["java", "-jar", "$HOME/PYX-Reloaded/target/PYX-jar-with-dependencies.jar"]
+COPY ./ /PYX-Reloaded/
+
+WORKDIR /PYX-Reloaded
+
+RUN ["mvn", "clean", "package"]
+
+RUN ["chmod", "+x", "run.sh"]
+
+ENTRYPOINT ["java", "-jar", "/PYX-Reloaded/target/PYX-Reloaded-jar-with-dependencies.jar"]
+#ENTRYPOINT ["/PYX-Reloaded/run.sh"]

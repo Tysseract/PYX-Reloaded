@@ -21,7 +21,7 @@ WORKDIR /PYX-Reloaded
 
 RUN ["mvn", "clean", "package"]
 
-RUN ["chmod", "+x", "run.sh"]
+#RUN ["chmod", "+x", "run.sh"]
 
 ENTRYPOINT ["java", "-jar", "/PYX-Reloaded/target/PYX-Reloaded-jar-with-dependencies.jar"]
 #ENTRYPOINT ["/PYX-Reloaded/run.sh"]

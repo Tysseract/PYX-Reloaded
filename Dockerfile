@@ -7,14 +7,17 @@ LABEL maintainer="Tys vanZeyl <tys@tysseract.net>" \
   
 EXPOSE 80
 
-RUN apk update && \
-  apk upgrade && \
-  apk add git && \
-  rm -rf /var/cache/apk/*
+#RUN apk update && \
+#  apk upgrade && \
+#  apk add git && \
+#  rm -rf /var/cache/apk/*
   
-RUN cd / && \
-  git clone https://github.com/Tysseract/PYX-Reloaded.git && \
-  cd PYX-Reloaded && \
+#RUN cd / && \
+#  git clone https://github.com/Tysseract/PYX-Reloaded.git
+  
+COPY * /PYX-Reloaded/
+  
+RUN cd /PYX-Reloaded && \
   mvn clean package
   
 ENTRYPOINT ["java", "-jar", "$HOME/PYX-Reloaded/target/PYX-jar-with-dependencies.jar"]

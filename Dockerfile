@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-8-alpine
+FROM maven:3.6.1-jdk-8-alpine
 
 LABEL maintainer="Tys vanZeyl <tys@tysseract.net>" \
   org.label-schema.name="Pretend You're Xyzzy Reloaded and Dockerized" \

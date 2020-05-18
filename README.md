@@ -1,4 +1,8 @@
-Pretend You're Xyzzy
+Pretend You're Xyzzy: Reloaded and Dockerized
+===================
+To install: 
+1. install docker
+2. run `docker run --name xyz -p 80:80 tysseract/pretend-youre-xyzzy-reloaded-and-dockerized:latest`
 ===================
 A fork of the original Pretend You're Xyzzy. Complete re-write of the frontend, and major changes in the backend. Finished product will have material design, work fairly decently on mobile devices, and have a server that is self-contained instead of depending on Tomcat.
 
